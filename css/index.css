@@ -155,7 +155,7 @@ body {
         rgba(33, 36, 43, 0.85),
         rgba(33, 36, 43, 0.85)
     ),
-    url("../img/background-1-moreira.svg") center/cover no-repeat;
+    url("../img/background-1-moreira.webp") center/cover no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
