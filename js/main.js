@@ -46,3 +46,25 @@ const track = document.querySelector('.testimonials-track');
     }
 
     setInterval(moveSlider, 4000);
+
+
+    //REVEAL
+    const revealElements = document.querySelectorAll('.reveal');
+
+const revealOnScroll = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                revealOnScroll.unobserve(entry.target); // anima só uma vez
+            }
+        });
+    },
+    {
+        threshold: 0.15 // quando 15% do elemento aparece
+    }
+);
+
+revealElements.forEach(el => {
+    revealOnScroll.observe(el);
+});

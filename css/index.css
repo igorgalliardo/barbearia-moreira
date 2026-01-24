@@ -155,7 +155,7 @@ body {
         rgba(33, 36, 43, 0.85),
         rgba(33, 36, 43, 0.85)
     ),
-    url("../img/background-1-moreira.webp") center/cover no-repeat;
+    url("../img/hero-barbershop.webp") center/cover no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -190,6 +190,36 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(254, 172, 0, 0.3);
 }
+
+.about {
+    padding: 100px 80px;
+    background-color: #1B1E24;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: var(--gray);
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.about-image img {
+    width: 60%;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
 
 /* SERVICES */
 .services {
@@ -277,9 +307,11 @@ body {
 /* GRID */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
+    justify-items: center; /* 🔥 centraliza os cards */
 }
+
 
 /* CARD */
 .team-member {
@@ -288,6 +320,8 @@ body {
     padding: 40px 20px;
     text-align: center;
     transition: 0.3s;
+    max-width: 320px;
+    width: 100%;
 }
 
 .team-photo {
@@ -389,9 +423,12 @@ body {
 }
 .contact-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 0.9fr;
     gap: 40px;
     align-items: center;
+}
+.contact-info{
+    max-width: 420px;
 }
 
 .contact-info p {
@@ -399,6 +436,10 @@ body {
     color: var(--gray);
     line-height: 1.5;
 }
+.map-container iframe {
+    filter: grayscale(30%) contrast(95%);
+}
+
 
 .btn-map {
     display: inline-block;
@@ -420,7 +461,7 @@ body {
 /* MAPA */
 .map-container {
     width: 100%;
-    height: 350px;
+    height: 280px;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
@@ -455,11 +496,94 @@ body {
 /* FOOTER */
 .footer {
     background-color: #16181D;
-    text-align: center;
-    padding: 30px 20px;
+    padding: 40px 80px 30px;
     color: var(--gray);
     font-size: 14px;
 }
+
+/* LINHA SUPERIOR */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+/* MENU ESQUERDA */
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-nav a {
+    color: var(--gray);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: var(--gold);
+}
+
+/* REDES DIREITA */
+.footer-social {
+    display: flex;
+    gap: 18px;
+}
+
+.footer-social img {
+    width: 25px;
+    height: 25px;
+    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-social a:hover img {
+    transform: translateY(-3px);
+    opacity: 1;
+}
+
+/* LINHA INFERIOR */
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 13px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* DEV */
+.footer-dev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.8;
+}
+
+.footer-dev img {
+    height: 25px;
+}
+
+/* SCROLL REVEAL */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 
 /* ========================= */
 /* RESPONSIVO */
@@ -500,6 +624,18 @@ body {
 
     .hero h1 {
         font-size: 36px;
+    }
+    .about {
+        padding: 80px 20px;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-image {
+        margin-top: 40px;
     }
     .services-grid {
         grid-template-columns: 1fr;
@@ -550,5 +686,27 @@ body {
         height: 56px;
         bottom: 20px;
         right: 20px;
+    }
+    .contact {
+        padding: 80px 20px;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .map-container {
+        height: 240px;
+    }
+
+    .contact-info {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .btn-map {
+        margin: 0 auto;
+        display: inline-block;
     }
 }
