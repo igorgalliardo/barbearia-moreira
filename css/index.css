@@ -651,8 +651,39 @@ body {
     .team-grid {
         grid-template-columns: 1fr;
     }
+    .contact {
+        padding: 80px 20px;
+    }
+
     .contact-wrapper {
         grid-template-columns: 1fr;
+        gap: 30px;
+        justify-items: center; /* 🔥 ESSENCIAL */
+    }
+
+    .contact-info {
+        text-align: center;
+        max-width: 320px;       /* 🔥 limita largura */
+        margin: 0 auto;         /* 🔥 centraliza bloco */
+    }
+
+    .contact-info p {
+        text-align: center;
+    }
+
+    .contact-info a.btn-map {
+        margin: 0 auto;
+        display: inline-block;
+    }
+
+    .contact h2 {
+        text-align: center;
+    }
+
+    .map-container {
+        width: 100%;
+        max-width: 500px;       /* opcional, deixa elegante */
+        margin: 0 auto;
     }
     .testimonials {
         padding: 80px 20px;
@@ -694,17 +725,33 @@ body {
     .contact-wrapper {
         grid-template-columns: 1fr;
         gap: 30px;
-    }
-
-    .map-container {
-        height: 240px;
+        justify-items: center; /* 🔥 ESSENCIAL */
     }
 
     .contact-info {
-        max-width: 100%;
+        text-align: center;
+        max-width: 320px;       /* 🔥 limita largura */
+        margin: 0 auto;         /* 🔥 centraliza bloco */
+    }
+
+    .contact-info p {
         text-align: center;
     }
 
+    .contact-info a.btn-map {
+        margin: 0 auto;
+        display: inline-block;
+    }
+
+    .contact h2 {
+        text-align: center;
+    }
+
+    .map-container {
+        width: 100%;
+        max-width: 500px;       /* opcional, deixa elegante */
+        margin: 0 auto;
+    }
     .btn-map {
         margin: 0 auto;
         display: inline-block;
