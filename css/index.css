@@ -148,32 +148,81 @@ body {
     transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* HERO */
-.hero {
-    height: calc(100vh);
-    background: linear-gradient(
-        rgba(33, 36, 43, 0.85),
-        rgba(33, 36, 43, 0.85)
-    ),
-    url("../img/hero-barbershop.webp") center/cover no-repeat;
+/* ========================= */
+/* HERO SLIDER */
+/* ========================= */
+
+.hero-slider {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* SLIDES */
+.slides {
+    position: absolute;
+    inset: 0;
+}
+
+/* SLIDE BASE */
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* BACKGROUNDS */
+.slide-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+/* VISIBILIDADE */
+.slide-bg.mobile {
+    display: none;
+}
+
+/* OVERLAY ESCURO */
+.slider-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(33, 36, 43, 0.75);
+    z-index: 1;
+}
+
+/* CONTEÚDO */
+.slider-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    padding-top: 80px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 20px;
-    padding-top: 80px;
+
+    color: #fff;
 }
 
-.hero h1 {
+.slider-content h1 {
     font-size: 48px;
     margin-bottom: 15px;
 }
 
-.hero p {
+.slider-content p {
     font-size: 18px;
     color: var(--gray);
     margin-bottom: 30px;
+    max-width: 600px;
 }
 
 .btn-agendar {
@@ -622,8 +671,21 @@ body {
         text-shadow: none;
     }
 
-    .hero h1 {
-        font-size: 36px;
+    .slider-content h1 {
+        font-size: 34px;
+    }
+
+    .slider-content p {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+    .slide-bg.desktop {
+        display: none;
+    }
+
+    .slide-bg.mobile {
+        display: block;
+        background-position: center top; /* 🔥 prioriza topo da imagem */
     }
     .about {
         padding: 80px 20px;
@@ -701,12 +763,21 @@ body {
 }
 
 @media (max-width: 480px) {
-    .hero h1 {
-        font-size: 28px;
+    .slider-content h1 {
+        font-size: 34px;
     }
 
-    .hero p {
+    .slider-content p {
         font-size: 16px;
+        padding: 0 20px;
+    }
+    .slide-bg.desktop {
+        display: none;
+    }
+
+    .slide-bg.mobile {
+        display: block;
+        background-position: center top; /* 🔥 prioriza topo da imagem */
     }
 
     .btn-agendar {
