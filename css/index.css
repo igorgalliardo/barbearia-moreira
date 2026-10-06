@@ -852,3 +852,9 @@ body {
         display: inline-block;
     }
 }
+
+/* Keep the expanded navigation comfortable on smaller tablets. */
+@media (min-width: 769px) and (max-width: 960px) {
+    .nav-desktop { display: none; }
+    .hamburger { display: flex; }
+}
